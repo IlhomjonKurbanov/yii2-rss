@@ -17,7 +17,6 @@ or add
 ```json
 {
   "require": {
-    ...
     "lan143/yii2_rss": "*"
   } 
 }
@@ -33,7 +32,7 @@ Configuration
 ```php
 'components' => [
     'cache' => [
-        'class' => 'yii\caching\FileCache',
+        'class' => \yii\caching\FileCache::class,
     ],
 ]
 ```
@@ -90,7 +89,7 @@ use lan143\yii2_rss\RssBehavior;
 use yii\db\ActiveQuery;
 use yii\helpers\Url;
 
-public function behaviors()
+public function behaviors(): array
 {
     return [
         'rss' => [
