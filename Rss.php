@@ -51,7 +51,7 @@ class Rss extends Module
         parent::init();
 
         if (is_string($this->cacheProvider)) {
-            $this->cacheProvider = Yii::$app->get('$this->cacheProvider');
+            $this->cacheProvider = Yii::$app->get($this->cacheProvider);
         }
 
         if (!$this->cacheProvider instanceof Cache) {
