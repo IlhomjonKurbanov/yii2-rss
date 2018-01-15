@@ -109,7 +109,7 @@ class Rss extends Module
 
             $channels[] = [
                 'title' => ArrayHelper::getValue($channel, 'title', Yii::$app->name),
-                'link' => ArrayHelper::getValue($channel, 'link', Url::home()),
+                'link' => ArrayHelper::getValue($channel, 'link', Url::home(true)),
                 'description' => ArrayHelper::getValue($channel, 'description'),
                 'language' => ArrayHelper::getValue($channel, 'language', Yii::$app->language),
                 'lastBuildDate' => (new DateTime())->format(DateTime::RFC822),
