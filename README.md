@@ -1,6 +1,6 @@
 Yii2 RSS
 ==========================
-Yii2 module for automatically generating RSS 2.0 Feed.
+Yii2 module for automatically generating RSS 2.0 feed.
 
 Installation
 ------------
@@ -9,13 +9,18 @@ The preferred way to install this extension is through [composer](http://getcomp
 * Either run
 
 ```
-php composer.phar require "lan143/yii2-rss" "*"
+php composer.phar require "lan143/yii2_rss" "*"
 ```
 
 or add
 
 ```json
-"lan143/yii2-rss": "*"
+{
+  "require": {
+    ...
+    "lan143/yii2_rss": "*"
+  } 
+}
 ```
 
 to the `require` section of your application's `composer.json` file and run `composer update`.
@@ -39,7 +44,7 @@ Configuration
 ```php
 'modules' => [
     'rss' => [
-        'class' => \lan143\yii2-rss\Rss::class,
+        'class' => \lan143\yii2_rss\Rss::class,
         'channels' => [
             // one model per channel
             [
@@ -55,7 +60,7 @@ Configuration
                     'class' => \app\models\Records::class,
                     'behaviors' => [
                         'rss' => [
-                            'class' => \lan143\yii2-rss\RssBehavior::class,
+                            'class' => \lan143\yii2_rss\RssBehavior::class,
                             'scope' => function (\yii\db\ActiveQuery $query) {
                                 $query->orderBy(['created_at' => SORT_DESC]);
                             },
@@ -81,7 +86,7 @@ Configuration
 
 ```php
 use DateTime;
-use lan143\yii2-rss\RssBehavior;
+use lan143\yii2_rss\RssBehavior;
 use yii\db\ActiveQuery;
 use yii\helpers\Url;
 
